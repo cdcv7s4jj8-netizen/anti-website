@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #060610;
+    color: #e3e2e2;
+    overflow-x: hidden;
+    font-family: 'Geist', sans-serif;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #090916;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #00ff41;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00b32e;
+  }
+}
+
+/* Custom noise overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuC4kSBGMWtkVqnAAQze53V9lYc6ZW2ADHWCxR-bbX7taYaEj4x2s__L0g3iv4iUknY6rkrE9oGCHOz2hSDDFvcXBaGrbembV1TVT5cYYbHUqPFQJwGoY-P8UtrBY1id4PPI2m6SFPIkfma0duLii1jz2eVzAIBNAORKnhNVWHCvap0ORo-HoxMGNo1r-UzHryrfN2I1Bu5jSqrn-0Fj-x4IPf9qbOUdrFzxy4yzYKP_kyBwhUd_RroRxDdBcJbpf7I38BLstI8D9vw);
+}
+
+/* Glassmorphism Navigation and Cards */
+.glass-nav {
+  backdrop-filter: blur(24px);
+  background: rgba(13, 14, 15, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+  backdrop-filter: blur(16px);
+  background: rgba(25, 26, 26, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.02);
+  transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 255, 65, 0.2);
+  box-shadow: inset 0 0 30px rgba(0, 255, 65, 0.02), 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Cyber text effects */
+.text-glow {
+  text-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
+}
+
+.text-glow-yellow {
+  text-shadow: 0 0 20px rgba(255, 219, 60, 0.4);
+}
+
+.bloom-primary:hover {
+  box-shadow: 0 0 45px rgba(0, 255, 65, 0.35);
+}
+
+/* Cinematic Spotlight Grid Background */
+.cinematic-bg {
+  background-image: 
+    radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0, 255, 65, 0.07) 0%, transparent 60%),
+    radial-gradient(circle at 50% 50%, rgba(6, 6, 16, 1) 0%, rgba(3, 3, 8, 1) 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Hide scrollbars for sliders */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom animated grid scan lines */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+}
